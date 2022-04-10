@@ -6,8 +6,14 @@ import java.util.Collections;
 public class PathFinding {
     private int[][] am;
 
+    private String pathV;
+
     public void setAm(int[][] am) {
         this.am = am;
+    }
+
+    public String getPathV() {
+        return pathV;
     }
 
     public void pathFind(){
@@ -59,6 +65,22 @@ public class PathFinding {
         for (int i = path.size(); i > 0; i--) {
             System.out.println(path.get(i-1));
         }
+
+        //Get string for WebView
+        pathV = "<h1>&#955(x<sub>";
+
+        pathV+=am.length + "</sub>)="+lambda[am.length-1]+"<br>";
+
+        pathV+="&#956(x<sub>1</sub>, x<sub>";
+
+        pathV+=am.length;
+
+        pathV+="</sub>)={x<sub>1</sub>";
+        for (int i = path.size() - 2; i >= 0; i--) {
+            pathV+=",x<sub>"+path.get(i)+"</sub>";
+        }
+
+        pathV+="}</h1>";
     }
 
 

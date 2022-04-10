@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <VBox prefHeight="720.0" prefWidth="1080.0" stylesheets="@../../../java/app/matricesofgraphs/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.matricesofgraphs.PathFindingController">
   <children>
@@ -79,7 +80,7 @@
                            </font>
                         </Button>
                      </children></AnchorPane>
-                  <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #edbe95;">
+                  <SplitPane dividerPositions="0.5, 0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #edbe95;">
                      <items>
                         <Label text="Матрица смежности" textAlignment="CENTER">
                            <font>
@@ -91,6 +92,7 @@
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>
                         </GridPane>
+                        <WebView fx:id="webView" prefHeight="461.0" prefWidth="859.0" />
                      </items>
                   </SplitPane>
               </items>

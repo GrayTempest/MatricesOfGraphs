@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.web.WebView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,6 +47,9 @@ public class PathFindingController {
 
     @FXML
     private ChoiceBox<Integer> nodes;
+
+    @FXML
+    private WebView webView;
 
     @FXML
     void openFile(ActionEvent event) {
@@ -122,6 +126,9 @@ public class PathFindingController {
 
             }
 
+            //Change selected nodes
+            nodes.setValue(columns);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -187,6 +194,8 @@ public class PathFindingController {
             PathFinding pf = new PathFinding();
             pf.setAm(am);
             pf.pathFind();
+
+            webView.getEngine().loadContent(pf.getPathV());
         });
 
 
