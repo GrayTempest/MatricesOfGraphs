@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.stage.FileChooser;
@@ -138,6 +139,12 @@ public class PathFindingController {
     void initialize() {
         nodes.getItems().addAll(2,3,4,5,6,7,8);
         nodes.setValue(2);
+
+        //com.sun.webkit.WebPage webPage = com.sun.javafx.webkit.Accessor.getPageFor(webView.getEngine());
+        //webPage.setBackgroundColor(0);
+
+        //transparent webview
+        webView.setBlendMode(BlendMode.DARKEN);
 
         //OK button - Set sizes for matrix
         bttnOKsize.setOnAction(actionEvent -> {

@@ -62,10 +62,11 @@ public class MainController {
 
 
                 //f
-                File f = new File("src/main/java/app/matricesofgraphs/style.css");//Path from content root ONLY
-                scene.getStylesheets().clear();
-                scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
-
+                //File f = new File("src/main/java/app/matricesofgraphs/style.css");//Path from content root ONLY
+                //File f = new File("src/main/resources/app/matricesofgraphs/style.css");//Path from content root ONLY
+                //scene.getStylesheets().clear();
+                //scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+                //scene.getStylesheets().add("style.css");
                 stage.setTitle("Матрица инцидентности");
 
                 stage.setScene(scene);
