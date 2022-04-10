@@ -31,10 +31,32 @@ public class PathFinding {
 
 
         //Finding path itself
-        for (int i = am.length; i > 0; i++) {
-            for (int j = am.length; j > 0; j++) {
-
+        //ArrayList for path points
+        ArrayList<Integer> path = new ArrayList<Integer>();
+        path.add(am.length);
+        //Path point set flag
+        boolean pf = false;
+        //End path flag
+        boolean pe = false;
+        //Loop
+        for (int j = am.length-1; j > 0; j--) {
+            for (int i = am.length-1; i > 0; i--) {
+                if (am[i][j] != 0){
+                    if ((lambda[j] == lambda[i] + am[i][j]) && pf == false && pe == false) {
+                        path.add(i);
+                        pf = true;
+                        if (i == 1){
+                            pe = true;
+                        }
+                    }
+                }
             }
+            pf = false;
+        }
+
+        //Print arraylist
+        for (int i = path.size(); i > 0; i--) {
+            System.out.println(path.get(i-1));
         }
     }
 
