@@ -40,12 +40,12 @@ public class PathFinding {
         boolean pe = false;
         //Loop
         for (int j = am.length-1; j > 0; j--) {
-            for (int i = am.length-1; i > 0; i--) {
+            for (int i = am.length-1; i >= 0; i--) {
                 if (am[i][j] != 0){
                     if ((lambda[j] == lambda[i] + am[i][j]) && pf == false && pe == false) {
-                        path.add(i);
+                        path.add(i+1); //numeration fix
                         pf = true;
-                        if (i == 1){
+                        if (i + 1 == 1){
                             pe = true;
                         }
                     }
