@@ -45,8 +45,9 @@ public class PathFinding {
                     if ((lambda[j] == lambda[i] + am[i][j]) && pf == false && pe == false) {
                         path.add(i+1); //numeration fix
                         pf = true;
-                        if (i + 1 == 1){
+                        if (i + 1 == 2){ //If we get 2 then we end loop (because after 2 comes 1)
                             pe = true;
+                            path.add(1); //and adding to arraylist "1" as endpoint
                         }
                     }
                 }
