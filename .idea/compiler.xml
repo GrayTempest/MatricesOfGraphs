@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="MatricesOfGraphs" options="--add-exports javafx.web/com.sun.webkit=app.matricesofgraphs --add-exports javafx.web/com.sun.javafx.webkit=app.matricesofgraphs" />
+      <module name="MatricesOfGraphs" options="" />
     </option>
   </component>
 </project>

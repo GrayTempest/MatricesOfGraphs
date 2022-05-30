@@ -26,6 +26,9 @@ public class MainController {
     private Button bttnIMtoAM;
 
     @FXML
+    private Button bttnMinSpanTree;
+
+    @FXML
     void initialize() {
         bttnIMtoAM.setOnAction(actionEvent -> {
             bttnIMtoAM.getScene().getWindow().hide();
@@ -68,6 +71,23 @@ public class MainController {
                 //scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
                 //scene.getStylesheets().add("style.css");
                 stage.setTitle("Матрица инцидентности");
+
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        bttnMinSpanTree.setOnAction(actionEvent -> {
+            bttnMinSpanTree.getScene().getWindow().hide();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/app/matricesofgraphs/min_spanning_tree.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+
+                stage.setTitle("Остовое дерево");
 
                 stage.setScene(scene);
                 stage.show();
