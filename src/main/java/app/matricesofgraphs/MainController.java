@@ -70,7 +70,7 @@ public class MainController {
                 //scene.getStylesheets().clear();
                 //scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
                 //scene.getStylesheets().add("style.css");
-                stage.setTitle("Матрица инцидентности");
+                stage.setTitle("Поиск пути");
 
                 stage.setScene(scene);
                 stage.show();

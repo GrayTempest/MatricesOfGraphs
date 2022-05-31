@@ -210,6 +210,8 @@ public class MinSpanTreeController {
             minSpanTree.setAm(am);
             minSpanTree.spanTree();
 
+            webView.getEngine().loadContent(minSpanTree.getPathV());
+
         });
 
 

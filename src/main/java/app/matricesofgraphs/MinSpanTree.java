@@ -113,6 +113,25 @@ public class MinSpanTree {
 
         ///////
         //Get string for WebView
+        pathV = "<h1>A<sub>p</sub>={";
+
+        pathV+="(x<sub>"+((ap.get(0))[0]+1)+"</sub>, x<sub>"+((ap.get(0))[1]+1)+"</sub>)";
+
+        for (int i = 1; i < ap.size(); i++) {
+            pathV+="; (x<sub>"+((ap.get(i))[0]+1)+"</sub>, x<sub>"+((ap.get(i))[1]+1)+"</sub>)";
+        }
+        pathV+="}<br>";
+        
+        pathV+= "X<sub>p</sub>={";
+
+        pathV+="x<sub>1</sub>";
+        for (int i = 1; i < xp.length; i++) {
+            pathV+= ", x<sub>"+(i+1)+"</sub>";
+        }
+
+        pathV+="}<br>L="+l;
+
+        pathV+="</h1>";
 
     }
 }
