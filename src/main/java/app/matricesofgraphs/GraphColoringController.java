@@ -200,21 +200,11 @@ public class GraphColoringController {
 
 
             /////
-            /*PathFinding pf = new PathFinding();
-            pf.setAm(am);
-            pf.pathFind();
-
-            webView.getEngine().loadContent(pf.getPathV());*/
-
-            /*MinSpanTree minSpanTree = new MinSpanTree();
-            minSpanTree.setAm(am);
-            minSpanTree.spanTree();
-
-            webView.getEngine().loadContent(minSpanTree.getPathV());*/
-
             GraphColoring graphColoring = new GraphColoring();
             graphColoring.setAm(am);
             graphColoring.coloring();
+
+            webView.getEngine().loadContent(graphColoring.getWebViewString());
 
         });
 
