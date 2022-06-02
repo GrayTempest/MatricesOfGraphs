@@ -58,7 +58,7 @@ public class GraphColoring {
 
         //colors variables
         //Переменная отвечающая за номер текущего цвета
-        int pp = 1;
+        int p = 1;
         //Генерируем первый цвет
         RandomHexColor randomHexColor = new RandomHexColor();
         String currentHexColorString = randomHexColor.getRandomHexColorString();
@@ -93,14 +93,14 @@ public class GraphColoring {
                 if (!smezhnost(xP, xd.get(n)[0])) { //Если есть хоть одна вершина смежная текцщей и окрашенная в текущий цвет, то пропускаем эту вершину
                     //Если нет, то красим текущую вершину в текущий цвет
                     if (xd.get(n)[2]==0) { //Если текущая вершина не окрашена, то красим
-                        xd.set(n, new int[]{xd.get(n)[0],xd.get(n)[1], pp, currentColor }); //Записываем текущий цвет этой вершине в массиве вершин
+                        xd.set(n, new int[]{xd.get(n)[0],xd.get(n)[1], p, currentColor }); //Записываем текущий цвет этой вершине в массиве вершин
                         //Помещаем в массив массив из номера вершины, её степени, номера цвета, hex значение цвета
 
                         xP.add(xd.get(n)[0]); //Записываем вершину в список окрашенных в текущий цвет вершин
                     }
                 }
             }
-            pp++; //После прохождения всех вершин меняем текущий цвет на следующий
+            p++; //После прохождения всех вершин меняем текущий цвет на следующий
             //Генерируем новый цвет
             currentHexColorString = randomHexColor.getRandomHexColorString();
             currentColor = Integer.parseInt(currentHexColorString.substring(1), 16);
@@ -109,7 +109,7 @@ public class GraphColoring {
         }
 
         //Get string for WebView
-        webViewString = "<h1>&#947(G)="+(pp-1)+"<br>";
+        webViewString = "<h1>&#947(G)="+(p -1)+"<br>";
 
         for (int i = xd.size()-1; i >= 0; i--) {
             webViewString +="col(x<sub>"+(xd.get(i)[0]+1)+"</sub>)=<span style=";
