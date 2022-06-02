@@ -34,14 +34,30 @@ public class GraphColoring {
         }
     }
 
+    public boolean smezhnost (ArrayList<Integer> xP, int n){
+        ArrayList<Integer> sm = new ArrayList<>();
+        for (int j = 0; j < am.length; j++) {
+            if(am[n][j]!=0){
+                sm.add(j);
+            }
+        }
+
+        boolean result = false;
+
+        for (int i = 0; i < xP.size(); i++) {
+            result = sm.contains(xP.get(i));
+        }
+        return !result;
+    }
+
     public void coloring(){
         ArrayList<int[]> xd = new ArrayList<>();
 
         ArrayList<int[]> pa = new ArrayList<>();
 
         //colors variables
-        int pp = 0;
-        int ii = 0;
+        int pp = 1;
+
 
         int count = 0;
 
@@ -51,10 +67,33 @@ public class GraphColoring {
                    count++;
                 }
             }
-            xd.add(new int[] {i, count});
+            xd.add(new int[] {i+1, count});
+            count=0;
         }
 
         bubbleSorter(xd);
+
+        int i = 0;
+
+        ArrayList<Integer> xP = new ArrayList<>();
+
+        int[] colors = new int[am.length];
+
+        while (colors[am.length-1]==0){
+            for (int n = xd.get(xd.size()-1)[0]; n < am.length; n++) {
+                if (/*xP.isEmpty() == true && */smezhnost(xP, n)) {
+                    if (colors[n] == 0) {
+                        colors[n] = pp;
+                    }
+                }
+            }
+            pp++;
+            xP.clear();
+        }
+
+        System.out.println("example");
+
+
 
 
     }

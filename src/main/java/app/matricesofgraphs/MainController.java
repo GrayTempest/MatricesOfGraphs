@@ -29,6 +29,9 @@ public class MainController {
     private Button bttnMinSpanTree;
 
     @FXML
+    private Button bttnGraphColoring;
+
+    @FXML
     void initialize() {
         bttnIMtoAM.setOnAction(actionEvent -> {
             bttnIMtoAM.getScene().getWindow().hide();
@@ -88,6 +91,22 @@ public class MainController {
                 Stage stage = new Stage();
 
                 stage.setTitle("Остовое дерево");
+
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        bttnGraphColoring.setOnAction(actionEvent -> {
+            bttnGraphColoring.getScene().getWindow().hide();
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("/app/matricesofgraphs/graph_coloring.fxml"));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+
+                stage.setTitle("Раскраска графа");
 
                 stage.setScene(scene);
                 stage.show();
